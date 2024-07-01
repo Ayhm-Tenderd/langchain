@@ -1250,6 +1250,7 @@ class AgentExecutor(Chain):
                 callbacks=run_manager.get_child() if run_manager else None,
                 **tool_run_kwargs,
             )
+            print('OBSERVATION====', observation)
         else:
             tool_run_kwargs = self.agent.tool_run_logging_kwargs()
             observation = InvalidTool().run(
